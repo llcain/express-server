@@ -1,11 +1,13 @@
 const express = require("express");
 
+const PORT = 8000;
+
 const app = express();
 
 app.get("/", (request, response) => {
-    response.send('Hey Codedreamer!');
+    response.send('Hey Bobby!');
 });
 
-app.listen(8000, () => {
-    console.log("Listen on the port 8000...");
+app.listen(PORT, () => {
+    console.log(`Server is now listening on port ${PORT}`);
 });
