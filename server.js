@@ -1,6 +1,9 @@
 // require express
 
 const express = require("express");
+
+// import path module
+
 const path = require('path');
 
 const PORT = 8000;
