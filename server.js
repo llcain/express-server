@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 // require express
 
 const express = require("express");
@@ -6,18 +8,25 @@ const express = require("express");
 
 const path = require('path');
 
-const PORT = 8000;
+
 
 // assign express method to a constant
 
 const app = express();
 
+// middleware
+
+app.use((req, res, next) => {
+    console.log(req.path, req.method)
+    next()
+})
+
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is now listening on port ${PORT}`);
+app.listen(process.env.PORT, () => {
+    console.log('listening on port', process.env.PORT);
 });
 
 // export the app constant to make it available for use in other files
