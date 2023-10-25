@@ -1,7 +1,11 @@
+// require express
+
 const express = require("express");
 const path = require('path');
 
 const PORT = 8000;
+
+// assign express method to a constant
 
 const app = express();
 
@@ -12,3 +16,6 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is now listening on port ${PORT}`);
 });
+
+// export the app constant to make it available for use in other files
+module.exports = app;
